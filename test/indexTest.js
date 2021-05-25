@@ -1,17 +1,17 @@
 describe('index.js', function () {
   describe('productSummaryAsAnArray()', function () {
-    it('returns a array of summaries each product and what it costs', function () {
-      expect(productSummaryAsAnArray()).to.eq(["Windows: 100$", "Doors, 200$", "Roofing: 400$"])
+    it('returns a array of summaries for each product and what it costs', function () {
+      expect(productSummaryAsAnArray()).to.have.all.members(["Windows: 100$", "Doors: 200$", "Roofing: 400$"])
     })
   })
   describe('productSummaryAsAString()', function () {
     it('returns a string summarizing each product and what it costs', function () {
-      expect(productSummaryAsAString()).to.eq("Windows: 100$, Doors, 200$, Roofing: 400$")
+      expect(productSummaryAsAString()).to.eq("Windows: 100$, Doors: 200$, Roofing: 400$")
     })
   })
   describe('expensiveProducts()', function () {
     it('returns a list of product objects that cost more than 150', function () {
-      expect(expensiveProducts()).to.eq([
+      expect(expensiveProducts()).to.have.all.members([
         {
           productName: "Doors",
           cost: 200
