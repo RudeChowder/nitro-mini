@@ -1,4 +1,4 @@
-# Using the Array Map Method
+# Nitro-mini - Practice with Arrays
 
 ## Learning Goals
 
