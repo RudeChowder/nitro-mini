@@ -14,23 +14,28 @@ const products = [
 ]
 
 const productSummaryAsAnArray = () => {
-  return products
+  return products.map( product => `${product.productName}: ${product.cost}$` )
 }
 
 const productSummaryAsAString = () => {
-  return products
+  return products.map( product => `${product.productName}: ${product.cost}$` ).join(", ")
 }
 
 const expensiveProducts = () => {
-  return products
+  return products.filter( product => product.cost > 150)
 }
 
 const productEstimate = (productName, productQuantity) => {
-  return products
+  const matchingProduct = products.find( product => product.productName === productName)
+  return matchingProduct.cost * productQuantity
 }
 
 const totalProjectEstimate = (numberOfWindows, numberOfDoors, numberOfRoofing) => {
-  return products
+  let total = 0
+  total += products[0].cost * numberOfWindows
+  total += products[1].cost * numberOfDoors
+  total += products[2].cost * numberOfRoofing
+  return total
 }
 
 productSummaryAsAnArray()
